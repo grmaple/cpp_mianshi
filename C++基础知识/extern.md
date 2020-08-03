@@ -110,3 +110,4 @@ const char* const g_str="123456"
 第一个const 修饰的是char \*，第二个修饰的是 g_str，g_str是常量
 
  
+
