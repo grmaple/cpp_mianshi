@@ -97,6 +97,18 @@ new会调用构造函数，不用指定内存大小，返回的指针不用强�
 
 8、申请数组时： new[]一次分配所有内存，多次调用构造函数，搭配使用delete[]，delete[]多次调用析构函数，销毁数组中的每个对象。而malloc则只能sizeof(int) * n。
 
+### new/delete原理
+
+new会先申请空间,再调用构造函数,delete会先调用析构函数,再释放空间。
+
+new和delete是用户进行动态内存申请和释放的操作符,operator new 和operator delete是系统提供的全局函数。
+
+new在底层调用operator new函数申请空间,delete在底层通过operator delete函数释放空间。
+
+operator new和operator delete底层调用了malloc和free
+
+
+
 ### malloc()
 
 https://blog.csdn.net/yusiguyuan/article/details/39496057
@@ -137,6 +149,20 @@ brk分配的内存需要等到高地址内存释放以后才能释放（可以fr
 
 可以用命令ps -o majflt minflt -C program来查看进程的majflt, minflt的值
 
+##### malloc/calloc/realloc的区别:
+
+```cpp
+//申请大小为size的内存块
+void* malloc (size_t size);
+
+//申请大小为num*size的内存块,并将每个元素初始化为0
+void* calloc (size_t num, size_t size);
+
+//ptr为NULL,申请空间类似于malloc
+//ptr不为NULL,则将ptr指向空间改变大小为size,并且如果改变的空间远大于旧空间,会申请新内存块,并将原数据拷贝过来,释放旧空间,返回新地址
+void* realloc (void* ptr, size_t size);
+```
+
 ### **free()**
 
 操作系统在调用malloc函数时，会默认在malloc分配的物理内存前面分配一个数据结构，这个数据结构记录了这次分配内存的大小，在用户眼中这个操作是透明的。
@@ -155,17 +181,26 @@ brk分配的内存需要等到高地址内存释放以后才能释放（可以fr
 
 free函数只是将参数指针指向的内存归还给操作系统，并不会把参数指针置NULL，为了以后访问到被操作系统重新分配后的错误数据，所以在调用free之后，通常需要手动将指针置NULL。从另一个角度来看，内存这种底层资源都是由操作系统来管理的，而不是编译器，编译器只是向操作系统提出申请。所以free函数是没有能力去真正的free内存的。只是告诉操作系统它归还了内存，然后操作系统就可以修改内存分配表，以供下次分配。
 
-### 如何判断内存泄漏
-
-内存泄漏通常是由于调用了malloc/new等内存申请的操作，但是缺少了对应的free/delete。为了判断内存是否泄露，我们一方面可以使用linux环境下的内存泄漏检查工具Valgrind,另一方面我们在写代码时可以添加内存申请和释放的统计功能，统计当前申请和释放的内存是否一致，以此来判断内存是否泄露。
-
 ### 内存泄漏
 
 内存泄漏(memory leak)是指由于疏忽或错误造成了程序未能释放掉不再使用的内存的情况。内存泄漏并非指内存在物理上的消失，而是应用程序分配某段内存后，由于设计错误，失去了对该段内存的控制，因而造成了内存的浪费。
 内存泄漏的分类：
 
 1. 堆内存泄漏 （Heap leak）。对内存指的是程序运行中根据需要分配通过malloc,realloc new等从堆中分配的一块内存，再是完成后必须通过调用对应的 free或者delete 删掉。如果程序的设计的错误导致这部分内存没有被释放，那么此后这块内存将不会被使用，就会产生Heap Leak.
-
 2. 系统资源泄露（Resource Leak）。主要指程序使用系统分配的资源比如 Bitmap,handle ,SOCKET等没有使用相应的函数释放掉，导致系统资源的浪费，严重可导致系统效能降低，系统运行不稳定。
-
 3. 没有将基类的析构函数定义为虚函数。当基类指针指向子类对象时，如果基类的析构函数不是virtual，那么子类的析构函数将不会被调用，子类的资源没有正确是释放，因此造成内存泄露。
+
+### 如何判断内存泄漏
+
+内存泄漏通常是由于调用了malloc/new等内存申请的操作，但是缺少了对应的free/delete。为了判断内存是否泄露，我们一方面可以使用linux环境下的内存泄漏检查工具Valgrind,另一方面我们在写代码时可以添加内存申请和释放的统计功能，统计当前申请和释放的内存是否一致，以此来判断内存是否泄露。
+
+### 如何处理内存泄漏？
+
+使用Valgrind，mtrace检测
+
+mtrace是一个C函数，在<mcheck.h>里声明及定义，函数原型为：void mtrace(void);
+
+mtrace的原理是记录每一对malloc-free的执行，若每一个malloc都有相应的free，则代表没有内存泄露，对于任何非malloc/free情況下所发生的内存泄露问题，mtrace并不能找出来。
+
+Valgrind 是一款 Linux下（支持 x86、x86_64和ppc32）程序的内存调试工具，它可以对编译后的二进制程序进行内存使用监测（C语言中的malloc和free，以及C++中的new和delete），找出内存泄漏问题。
+
