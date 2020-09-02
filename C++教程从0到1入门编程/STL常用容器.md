@@ -829,7 +829,7 @@ class Person {
         m_age = age;
     }
     string m_name;
-    int age;
+    int m_age;
 }
 //仿函数，本质是一个类类型
 class comparePerson {
@@ -841,9 +841,9 @@ public:
 }
 set<Person,comparePerson> s;
 Person p1("刘备",24);
-Person p1("关羽",28);
-Person p1("张飞",25);
-Person p1("赵云",21);
+Person p2("关羽",28);
+Person p3("张飞",25);
+Person p4("赵云",21);
 s.insert(p1);
 s.insert(p2);
 s.insert(p3);
