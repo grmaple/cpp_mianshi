@@ -1,0 +1,4 @@
+﻿  CircleAndPoint.cpp
+e:\桌面备份\文件夹\c++_mianshi\c++教程从0到1入门编程\项目\封装-点和圆关系\circleandpoint\circleandpoint\circleandpoint.cpp(17): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+e:\桌面备份\文件夹\c++_mianshi\c++教程从0到1入门编程\项目\封装-点和圆关系\circleandpoint\circleandpoint\circleandpoint.cpp(20): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+  CircleAndPoint.vcxproj -> E:\桌面备份\文件夹\c++_mianshi\C++教程从0到1入门编程\项目\封装-点和圆关系\CircleAndPoint\Debug\CircleAndPoint.exe
