@@ -29,6 +29,11 @@ public:
 	void saveRecord();
 	//读取记录
 	void loadRecord();
+	//显示往届得分
+	void showRecord();
+	//清空记录
+	void clearRecord();
+
 
 	bool fileIsEmpty;//文件标志为空的标志
 	map<int,vector<string>> m_Record;//往届记录

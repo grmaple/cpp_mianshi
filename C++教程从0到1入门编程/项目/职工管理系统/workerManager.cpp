@@ -8,6 +8,7 @@
 #include<iostream>
 using namespace std;
 #include<fstream>
+#include<string>
 #define FILENAME "empFile.txt"
 class Worker {
 public:

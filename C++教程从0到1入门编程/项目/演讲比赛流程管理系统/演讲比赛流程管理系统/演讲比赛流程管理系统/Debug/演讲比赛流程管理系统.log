@@ -1,5 +1,7 @@
 ﻿  speechManager.cpp
-e:\桌面备份\文件夹\c++_mianshi\c++教程从0到1入门编程\项目\演讲比赛流程管理系统\演讲比赛流程管理系统\演讲比赛流程管理系统\speechmanager.cpp(42): warning C4018: “<”: 有符号/无符号不匹配
+e:\桌面备份\文件夹\c++_mianshi\c++教程从0到1入门编程\项目\演讲比赛流程管理系统\演讲比赛流程管理系统\演讲比赛流程管理系统\speechmanager.cpp(44): warning C4018: “<”: 有符号/无符号不匹配
+e:\桌面备份\文件夹\c++_mianshi\c++教程从0到1入门编程\项目\演讲比赛流程管理系统\演讲比赛流程管理系统\演讲比赛流程管理系统\speechmanager.cpp(243): warning C4018: “<”: 有符号/无符号不匹配
+e:\桌面备份\文件夹\c++_mianshi\c++教程从0到1入门编程\项目\演讲比赛流程管理系统\演讲比赛流程管理系统\演讲比赛流程管理系统\speechmanager.cpp(277): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
 c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\numeric(26): warning C4244: “=”: 从“double”转换到“_Ty”，可能丢失数据
           with
           [
@@ -12,10 +14,48 @@ c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.1
               _InIt=std::_Deque_iterator<std::_Deque_val<std::_Deque_simple_types<double>>>,
               _Fn=std::plus<void>
           ]
-  e:\桌面备份\文件夹\c++_mianshi\c++教程从0到1入门编程\项目\演讲比赛流程管理系统\演讲比赛流程管理系统\演讲比赛流程管理系统\speechmanager.cpp(126): note: 参见对正在编译的函数 模板 实例化“_Ty std::accumulate<std::_Deque_iterator<std::_Deque_val<std::_Deque_simple_types<double>>>,float>(const _InIt,const _InIt,_Ty)”的引用
+  e:\桌面备份\文件夹\c++_mianshi\c++教程从0到1入门编程\项目\演讲比赛流程管理系统\演讲比赛流程管理系统\演讲比赛流程管理系统\speechmanager.cpp(133): note: 参见对正在编译的函数 模板 实例化“_Ty std::accumulate<std::_Deque_iterator<std::_Deque_val<std::_Deque_simple_types<double>>>,float>(const _InIt,const _InIt,_Ty)”的引用
           with
           [
               _Ty=float,
               _InIt=std::_Deque_iterator<std::_Deque_val<std::_Deque_simple_types<double>>>
           ]
-  演讲比赛流程管理系统.vcxproj -> E:\桌面备份\文件夹\c++_mianshi\C++教程从0到1入门编程\项目\演讲比赛流程管理系统\演讲比赛流程管理系统\Debug\演讲比赛流程管理系统.exe
+  源.cpp
+e:\桌面备份\文件夹\c++_mianshi\c++教程从0到1入门编程\项目\演讲比赛流程管理系统\演讲比赛流程管理系统\演讲比赛流程管理系统\源.cpp(92): warning C4018: “<”: 有符号/无符号不匹配
+e:\桌面备份\文件夹\c++_mianshi\c++教程从0到1入门编程\项目\演讲比赛流程管理系统\演讲比赛流程管理系统\演讲比赛流程管理系统\源.cpp(291): warning C4018: “<”: 有符号/无符号不匹配
+e:\桌面备份\文件夹\c++_mianshi\c++教程从0到1入门编程\项目\演讲比赛流程管理系统\演讲比赛流程管理系统\演讲比赛流程管理系统\源.cpp(323): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\numeric(26): warning C4244: “=”: 从“double”转换到“_Ty”，可能丢失数据
+          with
+          [
+              _Ty=float
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\numeric(36): note: 参见对正在编译的函数 模板 实例化“_Ty std::accumulate<_InIt,_Ty,std::plus<void>>(const _InIt,const _InIt,_Ty,_Fn)”的引用
+          with
+          [
+              _Ty=float,
+              _InIt=std::_Deque_iterator<std::_Deque_val<std::_Deque_simple_types<double>>>,
+              _Fn=std::plus<void>
+          ]
+  e:\桌面备份\文件夹\c++_mianshi\c++教程从0到1入门编程\项目\演讲比赛流程管理系统\演讲比赛流程管理系统\演讲比赛流程管理系统\源.cpp(181): note: 参见对正在编译的函数 模板 实例化“_Ty std::accumulate<std::_Deque_iterator<std::_Deque_val<std::_Deque_simple_types<double>>>,float>(const _InIt,const _InIt,_Ty)”的引用
+          with
+          [
+              _Ty=float,
+              _InIt=std::_Deque_iterator<std::_Deque_val<std::_Deque_simple_types<double>>>
+          ]
+  正在生成代码...
+源.obj : error LNK2005: "public: __thiscall SpeechManager::SpeechManager(void)" (??0SpeechManager@@QAE@XZ) 已经在 speechManager.obj 中定义
+源.obj : error LNK2005: "public: __thiscall SpeechManager::~SpeechManager(void)" (??1SpeechManager@@QAE@XZ) 已经在 speechManager.obj 中定义
+源.obj : error LNK2005: "public: void __thiscall SpeechManager::clearRecord(void)" (?clearRecord@SpeechManager@@QAEXXZ) 已经在 speechManager.obj 中定义
+源.obj : error LNK2005: "public: void __thiscall SpeechManager::createSpeaker(void)" (?createSpeaker@SpeechManager@@QAEXXZ) 已经在 speechManager.obj 中定义
+源.obj : error LNK2005: "public: void __thiscall SpeechManager::exitSystem(void)" (?exitSystem@SpeechManager@@QAEXXZ) 已经在 speechManager.obj 中定义
+源.obj : error LNK2005: "public: void __thiscall SpeechManager::initSpeech(void)" (?initSpeech@SpeechManager@@QAEXXZ) 已经在 speechManager.obj 中定义
+源.obj : error LNK2005: "public: void __thiscall SpeechManager::loadRecord(void)" (?loadRecord@SpeechManager@@QAEXXZ) 已经在 speechManager.obj 中定义
+源.obj : error LNK2005: "public: void __thiscall SpeechManager::saveRecord(void)" (?saveRecord@SpeechManager@@QAEXXZ) 已经在 speechManager.obj 中定义
+源.obj : error LNK2005: "public: void __thiscall SpeechManager::showRecord(void)" (?showRecord@SpeechManager@@QAEXXZ) 已经在 speechManager.obj 中定义
+源.obj : error LNK2005: "public: void __thiscall SpeechManager::showScore(void)" (?showScore@SpeechManager@@QAEXXZ) 已经在 speechManager.obj 中定义
+源.obj : error LNK2005: "public: void __thiscall SpeechManager::show_Menu(void)" (?show_Menu@SpeechManager@@QAEXXZ) 已经在 speechManager.obj 中定义
+源.obj : error LNK2005: "public: void __thiscall SpeechManager::speechContest(void)" (?speechContest@SpeechManager@@QAEXXZ) 已经在 speechManager.obj 中定义
+源.obj : error LNK2005: "public: void __thiscall SpeechManager::speedDraw(void)" (?speedDraw@SpeechManager@@QAEXXZ) 已经在 speechManager.obj 中定义
+源.obj : error LNK2005: "public: void __thiscall SpeechManager::startSpeech(void)" (?startSpeech@SpeechManager@@QAEXXZ) 已经在 speechManager.obj 中定义
+源.obj : error LNK2005: _main 已经在 speechManager.obj 中定义
+E:\桌面备份\文件夹\c++_mianshi\C++教程从0到1入门编程\项目\演讲比赛流程管理系统\演讲比赛流程管理系统\Debug\演讲比赛流程管理系统.exe : fatal error LNK1169: 找到一个或多个多重定义的符号
