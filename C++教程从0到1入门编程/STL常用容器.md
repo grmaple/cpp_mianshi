@@ -404,7 +404,7 @@ for (int i = 0; i<100000; i++) {
 count<<num<<endl;//num=30
 ```
 
-### dequer容器
+### deque容器
 
 功能：双端数组，可以对头端进行插入删除操作
 
