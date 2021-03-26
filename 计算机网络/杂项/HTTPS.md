@@ -1,0 +1,1 @@
+HTTPS 协议是由 HTTP 加上 [TLS](https://baike.baidu.com/item/TLS/2979545)/[SSL](https://baike.baidu.com/item/SSL/320778) 协议构建的可进行加密传输、身份认证的网络协议，主要通过[数字证书](https://baike.baidu.com/item/数字证书/326874)、[加密算法](https://baike.baidu.com/item/加密算法/2816213)、非对称密钥等技术完成互联网数据传输加密，实现互联网传输安全保护。
